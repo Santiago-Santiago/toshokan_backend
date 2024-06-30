@@ -24,6 +24,18 @@ public class LibroServiceImpl implements LibroService {
 
 	@Override
 	public Libro agregarLibro(Libro nuevo) {
+		System.out.println("EL AUTOR ES " + nuevo.getObjAutor().getId());
+		System.out.println("EL AUTOR ES " + nuevo.getObjAutor().getId());
+		System.out.println("EL AUTOR ES " + nuevo.getObjAutor().getId());
+		System.out.println("EL AUTOR ES " + nuevo.getObjAutor().getId());
+		System.out.println("EL AUTOR ES " + nuevo.getObjAutor().getId());
+		System.out.println("EL AUTOR ES " + nuevo.getObjAutor().getId());
+		System.out.println("EL AUTOR ES " + nuevo.getObjAutor().getId());
+		System.out.println("EL AUTOR ES " + nuevo.getObjAutor().getId());
+		System.out.println("EL AUTOR ES " + nuevo.getObjAutor().getId());
+		System.out.println("EL AUTOR ES " + nuevo.getObjAutor().getId());
+		System.out.println("EL AUTOR ES " + nuevo.getObjAutor().getId());
+		System.out.println("EL AUTOR ES " + nuevo.getObjAutor().getId());
 		return repo.save(nuevo);
 	}
 

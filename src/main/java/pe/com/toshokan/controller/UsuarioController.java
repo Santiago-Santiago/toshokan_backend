@@ -3,6 +3,7 @@ package pe.com.toshokan.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -49,9 +50,20 @@ public class UsuarioController {
 	}
 
 	// DeleteMapping eliminar datos segun lo enviado
-	@DeleteMapping("/{id}")
-	public ResponseEntity<String> eliminarUsuarios(@PathVariable String id) {
-		return ResponseEntity.ok(service.eliminarUsuariosById(id));
+		@DeleteMapping("/{id}")
+	public ResponseEntity<?> eliminarUsuarioById(@PathVariable String id) {
+		// return ResponseEntity.ok(service.eliminarCarritoAlquilerById(id));
+		try {
+			service.eliminarUsuariosById(id);
+			return ResponseEntity.ok().build();
+
+		} catch (EmptyResultDataAccessException e) {
+			// Manejo de errores si el registro no existe
+			return ResponseEntity.notFound().build();
+		} catch (Exception e) {
+			// Otro manejo de errores genérico
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+		}
 	}
 
 	// PutMapping -> modificar datos segun lo enviado

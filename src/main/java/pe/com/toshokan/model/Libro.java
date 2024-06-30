@@ -25,18 +25,18 @@ public class Libro {
 	private String descripcion;
 
 	@ManyToOne
-	@JoinColumn(name = "lib_autor", insertable = false, updatable = false)
+	@JoinColumn(name = "lib_autor")
 	private Autor objAutor;
 
 	@Column(name = "lib_public")
 	private String fechaPublicacion;
 
 	@ManyToOne
-	@JoinColumn(name = "lib_categoria", insertable = false, updatable = false)
+	@JoinColumn(name = "lib_categoria")
 	private Categoria objCategoria;
 
 	@ManyToOne
-	@JoinColumn(name = "lib_editorial", insertable = false, updatable = false)
+	@JoinColumn(name = "lib_editorial")
 	private Editorial objEditorial;
 
 	@Column(name = "lib_pag")
