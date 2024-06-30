@@ -57,7 +57,7 @@ public class EmpleadoController {
 		// Agregar una nueva Empleado
 		Empleado emp = service.agregarEmpleado(nuevo);
 		emp.setId("E");
-		return new ResponseEntity<>(emp, HttpStatus.CREATED);
+		return new ResponseEntity<Empleado>(emp, HttpStatus.CREATED);
 	}
 
 	// DeleteMapping eliminar datos segun lo enviado
