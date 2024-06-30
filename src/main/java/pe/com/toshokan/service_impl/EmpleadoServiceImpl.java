@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import pe.com.toshokan.model.Cargo;
 import pe.com.toshokan.model.Empleado;
 import pe.com.toshokan.repository.ICargoRepository;
 import pe.com.toshokan.repository.IEmpleadoRepository;
@@ -27,9 +26,9 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 
 	@Override
 	public Empleado agregarEmpleado(Empleado nuevo) {
-		String id = nuevo.getObjCargo().getId();
-		Cargo cargo = repoCargo.findById(id).get();
-		nuevo.setObjCargo(cargo);
+		//String id = nuevo.getObjCargo().getId();
+		//Cargo cargo = repoCargo.findById(id).get();
+		//nuevo.setObjCargo(cargo);
 		return repo.save(nuevo);
 	}
 
